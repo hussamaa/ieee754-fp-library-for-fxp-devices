@@ -1,0 +1,55 @@
+#include<stdio.h>
+#include <assert.h>
+#include "pontoFlutuante.h"
+
+
+int main(){
+
+   int sinal1, sinal2,e1,e2;
+     int numero1[32] = {
+
+		0, 1, 0, 0, 0, 0, 1, 0,
+                0, 0, 1, 1, 0, 1, 0, 0,
+                0, 0, 0, 0, 0, 0, 0, 0,
+                0, 0, 0, 0, 0, 0, 0, 0
+
+
+	};
+
+	int numero2[32] = {
+
+                0, 1, 0, 0, 0, 0, 0, 1,
+                0, 1, 0, 0, 1, 0, 0, 0,
+                0, 0, 0, 0, 0, 0, 0, 0,
+                0, 0, 0, 0, 0, 0, 0, 0
+
+	};
+
+   //expoente do Primeiro numero
+
+    e1 =  converte_binario(numero1);
+
+     //expoente do Segundo numero
+
+    e2 = converte_binario(numero2);
+
+    casaDecimal = e1 + e2 + 1;
+
+    //Deslocamento para Esquerda
+
+    if( e1 >= e2 ){
+
+	    sinal1 = numero1[0];
+	    sinal2 = numero2[0];
+
+	    expoenteDecimal = e1 - e2;
+	    shift_left(expoenteDecimal,numero1);
+	}
+
+
+assert(numeroEsquerdo1[1] == 0);
+
+assert(numeroDireito1[0] == 1	);
+
+
+}
