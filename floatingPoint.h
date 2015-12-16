@@ -1,69 +1,43 @@
 #include <math.h>
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <string.h>
 
-   int op,i,k,decimal;
-   int size,base,vIEEE[8],decimalEXponent,resultIEEE;
-   int e1, e2, j, rightnumber1[32],leftnumber1[32], rightnumber2[32],leftnumber2[32];
-   int rightSize,number1[24],number2[24],leftSize,result,result1[32],ma[32],result2[32],carry;
-   int number1[32],number2[32];
-   int q,p,DecimalResult;
-   int sum[32],shift,c[64];
-   float fractionalBase,result10,fractionalResult;
+int op, i, k, decimal;
+int size, base, vIEEE[8], decimalEXponent, resultIEEE;
+int e1, e2, j, rightnumber1[32], leftnumber1[32], rightnumber2[32], leftnumber2[32];
+int rightSize, number1[24], number2[24], leftSize, result, result1[32], ma[32], result2[32], carry;
+int number1[32], number2[32];
+int q, p, DecimalResult;
+int sum[32], shift, c[64];
+float fractionalBase,result10,fractionalResult;
 
-convert_binary(int number[]){
-
- size = 1;
- resultIEEE = 0;
-while(  size <= 8 ){
-base = pow(2,8-size);
-resultIEEE += number[size] * base;
-size++;
-
-    }
-
-int convert_binary(int number[]){
-
+/** function to convert a binary to an integer number */
+int fp_convert_binary(int number[]){
    	size = 1;
     resultadoIEEE = 0;
-
     while( size <= 8 ){
-
         base = pow(2,8-size);
         resultIEEE += number[size] * base;
         size++;
-
     }
-
     e1 = resultIEEE - 127;
-
     return e1;
-
 }
 
-int shift_left(int decimalExponent,int number[]){
-
-     j = 0;
-
-     for( i = decimalExponent + 9; i <= 31; i++){
-
-         rightnumber1[j] = number[i];
-         j++;
-
-          }
-
-          rightSize = j;
-          j = 1;
-
-        for(i = 9 ; i < decimalExponent + 9; i++){
-
-                leftnumber = j;
-                leftnumber1[j] = number[i];
-                j++;
-
-           }
-
-
+/** describe this function */
+int fp_shift_left(int decimalExponent, int number[]){
+  j = 0;
+  for( i = decimalExponent + 9; i <= 31; i++){
+    rightnumber1[j] = number[i];
+    j++;
+  }
+  rightSize = j;
+  j = 1;
+  for(i = 9 ; i < decimalExponent + 9; i++){
+    leftnumber = j;
+    leftnumber1[j] = number[i];
+    j++;
+  }
 }
 
 void som_binaryInteger(int rightnumber1[],int number[],int j){
